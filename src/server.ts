@@ -1,11 +1,12 @@
-import express, { Request, Response } from 'express'
-
+import express from 'express'
+import { router } from './routes'
 
 const app = express()
 const port = 3001
 
-app.get("/", (req: Request, res: Response) => res.send('Welcome to api'))
+app.use(router)
 
 app.listen(port, () => {
     console.log(`server is listening on ${port}`);
 })
+
