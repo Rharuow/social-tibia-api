@@ -1,12 +1,13 @@
 import express from 'express'
 import { router } from './routes'
+import './database'
+require('dotenv').config()
 
 const app = express()
-const port = 3001
+const port = process.env.HOST_PORT
 
 app.use(router)
 
 app.listen(port, () => {
-    console.log(`server is listening on ${port}`);
+    console.log(`server is listening on ${process.env.HOST_URL}:${port}`);
 })
-
