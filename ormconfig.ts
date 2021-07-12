@@ -11,10 +11,10 @@ export default {
   "logging": false,
   "cli": {
     "migrationsDir": process.env.TYPEORM_MIGRATIONS_DIR,
-    "entitiesDir": "src/entities"
+    "entitiesDir": process.env.TYPEORM_ENTITIES_DIR
   },
   "entities": [
-    "src/entities/*.ts"
+    process.env.TYPEORM_ENTITIES
   ],
   "migrations": [
     process.env.TYPEORM_MIGRATIONS
