@@ -2,8 +2,11 @@ import { Router } from "express";
 import { RootController } from "./controllers/RootController";
 import { CreateUserController } from './controllers/User/CreateUserController';
 import { ensurePermissionRegister } from "./middlewares/ensurePermissionRegister";
-import { DeleteUserController } from "./controllers/DeleteUserController";
-import { ListUserController } from "./controllers/ListUserController";
+import { DeleteUserController } from "./controllers/User/DeleteUserController";
+import { ListUserController } from "./controllers/User/ListUserController";
+import { CreateCharController } from './controllers/Char/CreateCharController';
+import { ListCharController } from './controllers/Char/ListCharController';
+import { ListCharsByUserController } from './controllers/User/ListCharsByUserController';
 
 const router = Router()
 
