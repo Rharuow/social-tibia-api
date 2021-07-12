@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { RootController } from "./controllers/RootController";
-import { CreateUserController } from './controllers/CreateUserController';
+import { CreateUserController } from './controllers/User/CreateUserController';
 import { ensurePermissionRegister } from "./middlewares/ensurePermissionRegister";
 import { DeleteUserController } from "./controllers/DeleteUserController";
 import { ListUserController } from "./controllers/ListUserController";
