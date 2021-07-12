@@ -19,7 +19,6 @@ export class CreateUserService {
 
     if(userAlreadyExists) throw new Error("User already exists")
     
-    console.log(password)
     const passwordHashed = await hash(password, parseInt(process.env.HASH_SALTS))
 
     const user = userRepository.create({username, email, password: passwordHashed})
