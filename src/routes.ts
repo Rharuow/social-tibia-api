@@ -22,7 +22,6 @@ const listCharsByUserController = new ListCharsByUserController()
 const createCharController = new CreateCharController()
 const listCharController = new ListCharController()
 
-
 router.get("/", rootController.run)
 router.post("/users", ensurePermissionRegister, createUserController.handle)
 router.get("/users", listUserController.handle)

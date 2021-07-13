@@ -5,13 +5,17 @@ import { ListCharsByUserService } from '../../servicies/User/ListCharsByUserServ
 export class ListCharsByUserController {
 
   async handle(req: Request, res: Response) {
-    const listCharsByUserService = new ListCharsByUserService()
+    try {
+      const listCharsByUserService = new ListCharsByUserService()
+      
+      const {id} = req.params
 
-    const {id} = req.params
-
-    const chars = listCharsByUserService.execute(id)
-
-    return res.json(chars)
-
+      const chars = await listCharsByUserService.execute(id)
+  
+      return res.json(chars)
+      
+    } catch (error) {
+      return res.status(507).json({message: error.message})
+    }
   }
 }
