@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
+import { Char } from './Char';
 
 
 @Entity("users")
@@ -21,6 +22,11 @@ export class User {
 
   @UpdateDateColumn()
   updated_at: Date
+
+  @OneToMany(() => Char, char => char.user, {
+    onDelete: 'CASCADE',
+  })
+  chars: Char[]
 
   constructor() {
     if(!this.id) this.id = uuid()
