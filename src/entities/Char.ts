@@ -49,8 +49,10 @@ export class Char {
     own: string
 
     @JoinColumn({name: 'own'})
-    @ManyToOne(() => User)
-    ownChar: User 
+    @ManyToOne(() => User, {
+        onDelete: 'CASCADE',
+    })
+    user: User
 
     constructor() {
         if(!this.id) 
