@@ -11,7 +11,7 @@ export class ListCharsByUserController {
 
     const chars = listCharsByUserService.execute(id)
 
-    return res.json(listCharsByUserService)
+    return res.json(chars)
 
   }
 }
