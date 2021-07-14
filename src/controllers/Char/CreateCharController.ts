@@ -13,7 +13,5 @@ export class CreateCharController {
     } catch(err) {
       return res.status(406).json({message: err.message})
     }
-
-
   }
 }
