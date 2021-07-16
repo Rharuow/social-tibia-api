@@ -32,8 +32,7 @@ export class CreateRequiriments1626206522851 implements MigrationInterface {
                     columnNames: ['charId'],
                     referencedColumnNames: ['id'],
                     referencedTableName: 'chars',
-                    onDelete: 'SET NULL',
-                    onUpdate: 'SET NULL'
+                    onDelete: 'CASCADE',
                 }
             ]
         }))
