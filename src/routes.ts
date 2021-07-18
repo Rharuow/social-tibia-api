@@ -7,9 +7,6 @@ import { ListUserController } from "./controllers/User/ListUserController";
 import { CreateCharController } from './controllers/Char/CreateCharController';
 import { ListCharController } from './controllers/Char/ListCharController';
 import { ListCharsByUserController } from './controllers/User/ListCharsByUserController';
-import { CreateRequirimentController } from './controllers/Requiriment/CreateRequirimentController';
-import { ListRequirimentController } from './controllers/Requiriment/ListRequirimentContorller';
-import { ListRequirimentByCharController } from './controllers/Requiriment/ListRequirimentByCharController';
 
 const router = Router()
 
@@ -25,10 +22,6 @@ const listCharsByUserController = new ListCharsByUserController()
 const createCharController = new CreateCharController()
 const listCharController = new ListCharController()
 
-//requiriments
-const createRequirimentController = new CreateRequirimentController()
-const listRequirimentController = new ListRequirimentController()
-const listRequirimentByCharController = new ListRequirimentByCharController()
 
 
 router.get("/", rootController.run)
@@ -41,8 +34,5 @@ router.get("/users/:id/chars", listCharsByUserController.handle)
 router.get("/chars", listCharController.handle)
 router.post("/chars", createCharController.handle)
 
-router.post("/requiriments", createRequirimentController.handle)
-router.get("/requiriments", listRequirimentController.handle)
-router.get("/requiriments/:id", listRequirimentByCharController.handle)
 
 export { router }
