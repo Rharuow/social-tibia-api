@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sudo ./node_modules/ts-node-dev/lib/bin.js src/server.ts",
+    "dev": "tsnd --respawn src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js --config ormconfig.ts"
   },
   "keywords": [],
