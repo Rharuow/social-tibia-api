@@ -1,35 +1,40 @@
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from "typeorm";
 import { v4 as uuid } from "uuid";
-import { Char } from './Char';
-
+import { Char } from "./Char";
 
 @Entity("users")
 export class User {
   @PrimaryColumn()
-  readonly id: string
+  readonly id: string;
 
   @Column()
-  username: string
+  username: string;
 
   @Column()
-  email: string
+  email: string;
 
   @Column()
-  password: string
+  password: string;
 
   @CreateDateColumn()
-  created_at: Date
+  created_at: Date;
 
   @UpdateDateColumn()
-  updated_at: Date
+  updated_at: Date;
 
-  @OneToMany(() => Char, char => char.user, {
-    onDelete: 'CASCADE',
+  @OneToMany(() => Char, (char) => char.user, {
+    onDelete: "CASCADE",
   })
-  chars: Char[]
+  chars: Char[];
 
   constructor() {
-    if(!this.id) this.id = uuid()
+    if (!this.id) this.id = uuid();
   }
-
 }

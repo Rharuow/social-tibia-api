@@ -1,19 +1,19 @@
-
-import { getCustomRepository } from 'typeorm';
-import { UserRepositories } from '../../repositories/UserRepositories';
+import { getCustomRepository } from "typeorm";
+import { UserRepositories } from "../../repositories/UserRepositories";
 
 export class ListCharsByUserService {
-
   async execute(userId: string) {
-    const userRepositories = getCustomRepository(UserRepositories)
-    
-    console.log(userId)
+    const userRepositories = getCustomRepository(UserRepositories);
 
-    const chars = await userRepositories.find({where: {id: userId}, relations: ['chars']})
+    console.log(userId);
 
-    if(chars.length === 0) throw new Error("User doesn't have char")
+    const chars = await userRepositories.find({
+      where: { id: userId },
+      relations: ["chars"],
+    });
 
-    return chars
+    if (chars.length === 0) throw new Error("User doesn't have char");
 
+    return chars;
   }
 }
